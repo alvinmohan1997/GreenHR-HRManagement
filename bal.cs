@@ -59,7 +59,7 @@ namespace WebApplication1
             int l = dt.Rows.Count-1;
             for(int i = l; i >=0; i--)
             {
-                if (dt.Rows[i].ItemArray[6].ToString() == "inprogress" && dt.Rows[i].ItemArray[14].ToString()==name)
+                if (dt.Rows[i].ItemArray[6].ToString() == "inprogress" && dt.Rows[i].ItemArray[0].ToString()==name)
                 {
                     mgr = new managerreq();
                     mgr.jobdesc = dt.Rows[i].ItemArray[1].ToString();
@@ -77,6 +77,10 @@ namespace WebApplication1
             }
             return mgr;
         }
-        
+        public void storecandidate(candidate cn)
+        {
+
+            d.storecandidate(cn);
+        }
     }
 }

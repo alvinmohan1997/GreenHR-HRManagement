@@ -42,8 +42,13 @@
 <body>
     <form id="form1" runat="server">
         <div class="auto-style1">
-            <strong>Register</strong>
-            <table class="auto-style2">
+            <strong>Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>&nbsp;<table class="auto-style2">
+                <tr>
+                    <td class="auto-style7">Application id</td>
+                    <td class="auto-style3">
+                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                    </td>
+                </tr>
                 <tr>
                     <td class="auto-style7">Name</td>
                     <td class="auto-style3">
@@ -137,6 +142,16 @@
                 <tr>
                     <td colspan="2">
                         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">gotohome</asp:LinkButton>
                     </td>
                 </tr>
             </table>

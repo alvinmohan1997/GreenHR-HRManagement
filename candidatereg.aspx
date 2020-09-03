@@ -27,8 +27,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Designation
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            Application id<asp:Label ID="Label11" runat="server" Text="Label"></asp:Label>
             <br />
             <table class="auto-style1">
                 <tr>

@@ -17,7 +17,7 @@ namespace WebApplication1
             string username = Request.QueryString["appid"];
             name = username;
             Session["UserName"] = username;
-            Label1.Text = Session["UserName"] as string;
+            Label11.Text = Session["UserName"] as string;
 
              m= b.displayapp(name);
 
@@ -35,7 +35,7 @@ namespace WebApplication1
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("candidatesub.aspx");
+            Response.Redirect("candidatesub.aspx?applid="+name);
         }
     }
 }

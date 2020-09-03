@@ -20,12 +20,13 @@ namespace WebApplication1
         public int noticeperiod { get; set; }
         public string latestcompany { get; set; }
         public string latestdesignation { get; set; }
-        public string currentsalary { get; set; }
+        public int currentsalary { get; set; }
         public DateTime registerationdate { get; set; }
         public int age { get; set; }
         public DateTime dob { get; set; }
         public int requestid { get; set; }
         public string email { get; set; }
         public DateTime interviewdate { get; set; }
+        public int applid { get; set; }
     }
 }

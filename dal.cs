@@ -71,5 +71,42 @@ namespace WebApplication1
             con.Close();
             return dt;
         }
+        public void storecandidate(candidate cn)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("insert into candidate_table values(@cand_name,@skills,@pgm_language,@high_qualification,@college,@university,@address,@exp_years,@notice_months,@latest_company,@latest_desg,@cur_sal,@reg_date,@age,@dob,@reqid,@cand_email,@interview_date,@appid)", con);
+            
+            cmd.Parameters.AddWithValue("@cand_name", cn.candidatename);
+            
+            cmd.Parameters.AddWithValue("@skills", cn.candidateskills);
+            cmd.Parameters.AddWithValue("@pgm_language", cn.pgmlanguage);
+            cmd.Parameters.AddWithValue("@high_qualification", cn.qualification);
+            cmd.Parameters.AddWithValue("@college", cn.college);
+            cmd.Parameters.AddWithValue("@university", cn.university);
+            cmd.Parameters.AddWithValue("@address", cn.address);
+            cmd.Parameters.AddWithValue("@exp_years", cn.experience);
+            cmd.Parameters.AddWithValue("@notice_months", cn.noticeperiod);
+            cmd.Parameters.AddWithValue("@latest_company", cn.latestcompany);
+
+            cmd.Parameters.AddWithValue("@latest_desg", cn.latestdesignation);
+
+            cmd.Parameters.AddWithValue("@cur_sal", cn.currentsalary);
+
+            cmd.Parameters.AddWithValue("@reg_date", cn.registerationdate);
+
+            cmd.Parameters.AddWithValue("@age", cn.age);
+            cmd.Parameters.AddWithValue("@dob", cn.dob);
+            cmd.Parameters.AddWithValue("@reqid", cn.requestid);
+            cmd.Parameters.AddWithValue("@cand_email", cn.email);
+            cmd.Parameters.AddWithValue("@interview_date", cn.interviewdate);
+            cmd.Parameters.AddWithValue("@appid", cn.applid);
+
+
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+        }
     }
 }
