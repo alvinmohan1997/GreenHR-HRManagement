@@ -20,7 +20,7 @@ namespace WebApplication1
             userentity usr = new userentity();
             usr.email = TextBox1.Text;
             usr.pwd = TextBox2.Text;
-            
+
             if (b.Rec(usr))
             {
 
@@ -30,7 +30,6 @@ namespace WebApplication1
             {
                 Label1.Text = "invalid";
             }
-
         }
     }
 }

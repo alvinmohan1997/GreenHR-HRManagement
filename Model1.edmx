@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="greenhrModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="application_table">
+          <Key>
+            <PropertyRef Name="appl_id" />
+          </Key>
+          <Property Name="appl_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="job_desc" Type="varchar" MaxLength="2500" />
+          <Property Name="min_qualification" Type="varchar" MaxLength="500" />
+          <Property Name="pref_qualification" Type="varchar" MaxLength="500" />
+          <Property Name="resp" Type="varchar" MaxLength="600" />
+          <Property Name="req_id" Type="int" />
+          <Property Name="appstatus" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="request_table">
+          <Key>
+            <PropertyRef Name="req_id" />
+          </Key>
+          <Property Name="manager_name" Type="varchar" MaxLength="50" />
+          <Property Name="project_name" Type="varchar" MaxLength="50" />
+          <Property Name="period_month" Type="int" />
+          <Property Name="noof_vacancies" Type="int" />
+          <Property Name="skill" Type="varchar" MaxLength="100" />
+          <Property Name="pgm_languages" Type="varchar" MaxLength="100" />
+          <Property Name="exp_years" Type="int" />
+          <Property Name="req_desc" Type="varchar" MaxLength="500" />
+          <Property Name="req_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="reqstatus" Type="varchar" MaxLength="20" />
+          <Property Name="desg" Type="varchar" MaxLength="50" />
+          <Property Name="date_request" Type="date" />
+        </EntityType>
+        <Association Name="reqforeignkey">
+          <End Role="request_table" Type="Self.request_table" Multiplicity="0..1" />
+          <End Role="application_table" Type="Self.application_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="request_table">
+              <PropertyRef Name="req_id" />
+            </Principal>
+            <Dependent Role="application_table">
+              <PropertyRef Name="req_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="greenhrModelStoreContainer">
+          <EntitySet Name="application_table" EntityType="Self.application_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="request_table" EntityType="Self.request_table" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="reqforeignkey" Association="Self.reqforeignkey">
+            <End Role="request_table" EntitySet="request_table" />
+            <End Role="application_table" EntitySet="application_table" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="greenhrModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="application_table">
+          <Key>
+            <PropertyRef Name="appl_id" />
+          </Key>
+          <Property Name="appl_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="job_desc" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+          <Property Name="min_qualification" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="pref_qualification" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="resp" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+          <Property Name="req_id" Type="Int32" />
+          <Property Name="appstatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="request_table" Relationship="Self.reqforeignkey" FromRole="application_table" ToRole="request_table" />
+        </EntityType>
+        <EntityType Name="request_table">
+          <Key>
+            <PropertyRef Name="req_id" />
+          </Key>
+          <Property Name="manager_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="project_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="period_month" Type="Int32" />
+          <Property Name="noof_vacancies" Type="Int32" />
+          <Property Name="skill" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="pgm_languages" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="exp_years" Type="Int32" />
+          <Property Name="req_desc" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="req_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="reqstatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="desg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="date_request" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="application_table" Relationship="Self.reqforeignkey" FromRole="request_table" ToRole="application_table" />
+        </EntityType>
+        <Association Name="reqforeignkey">
+          <End Role="request_table" Type="Self.request_table" Multiplicity="0..1" />
+          <End Role="application_table" Type="Self.application_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="request_table">
+              <PropertyRef Name="req_id" />
+            </Principal>
+            <Dependent Role="application_table">
+              <PropertyRef Name="req_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="greenhrEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="application_table" EntityType="Self.application_table" />
+          <EntitySet Name="request_table" EntityType="Self.request_table" />
+          <AssociationSet Name="reqforeignkey" Association="Self.reqforeignkey">
+            <End Role="request_table" EntitySet="request_table" />
+            <End Role="application_table" EntitySet="application_table" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="greenhrModelStoreContainer" CdmEntityContainer="greenhrEntities">
+          <EntitySetMapping Name="application_table">
+            <EntityTypeMapping TypeName="greenhrModel.application_table">
+              <MappingFragment StoreEntitySet="application_table">
+                <ScalarProperty Name="appl_id" ColumnName="appl_id" />
+                <ScalarProperty Name="job_desc" ColumnName="job_desc" />
+                <ScalarProperty Name="min_qualification" ColumnName="min_qualification" />
+                <ScalarProperty Name="pref_qualification" ColumnName="pref_qualification" />
+                <ScalarProperty Name="resp" ColumnName="resp" />
+                <ScalarProperty Name="req_id" ColumnName="req_id" />
+                <ScalarProperty Name="appstatus" ColumnName="appstatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="request_table">
+            <EntityTypeMapping TypeName="greenhrModel.request_table">
+              <MappingFragment StoreEntitySet="request_table">
+                <ScalarProperty Name="manager_name" ColumnName="manager_name" />
+                <ScalarProperty Name="project_name" ColumnName="project_name" />
+                <ScalarProperty Name="period_month" ColumnName="period_month" />
+                <ScalarProperty Name="noof_vacancies" ColumnName="noof_vacancies" />
+                <ScalarProperty Name="skill" ColumnName="skill" />
+                <ScalarProperty Name="pgm_languages" ColumnName="pgm_languages" />
+                <ScalarProperty Name="exp_years" ColumnName="exp_years" />
+                <ScalarProperty Name="req_desc" ColumnName="req_desc" />
+                <ScalarProperty Name="req_id" ColumnName="req_id" />
+                <ScalarProperty Name="reqstatus" ColumnName="reqstatus" />
+                <ScalarProperty Name="desg" ColumnName="desg" />
+                <ScalarProperty Name="date_request" ColumnName="date_request" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

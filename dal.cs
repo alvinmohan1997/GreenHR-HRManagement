@@ -28,7 +28,7 @@ namespace WebApplication1
         public void store(managerreq usr)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("insert into request_table values(@mgrname,@projectname,@period,@noofvac,@skill,@pgmlang,@exp,@desc,@status,@date,@desig)", con);
+            SqlCommand cmd = new SqlCommand("insert into request_table values(@mgrname,@projectname,@period,@noofvac,@skill,@pgmlang,@exp,@desc,@status,@desig,@date)", con);
             cmd.Parameters.AddWithValue("@mgrname", usr.mgrname);
             cmd.Parameters.AddWithValue("@projectname", usr.prjname);
             cmd.Parameters.AddWithValue("@period", usr.period);
@@ -39,8 +39,9 @@ namespace WebApplication1
             cmd.Parameters.AddWithValue("@exp", usr.exp);
             cmd.Parameters.AddWithValue("@desc", usr.prjdesc);
             cmd.Parameters.AddWithValue("@status", usr.status);
-            cmd.Parameters.AddWithValue("@date", usr.date);
+            
             cmd.Parameters.AddWithValue("@desig", usr.desig);
+            cmd.Parameters.AddWithValue("@date", usr.date);
 
 
             cmd.ExecuteNonQuery();
@@ -48,14 +49,25 @@ namespace WebApplication1
         }
         public DataTable status()
         {
+            managerreq usr = new managerreq();
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from request_table", con);
-            
+           
             SqlDataReader rdr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
             
             dt.Load(rdr);
             
+            con.Close();
+            return dt;
+        }
+        public DataTable app()
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from application_table", con);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(rdr);
             con.Close();
             return dt;
         }

@@ -43,6 +43,7 @@ namespace WebApplication1
             mr.prjdesc = TextBox8.Text;
             mr.status = "open";
             mr.date = DateTime.Today;
+
             b.storereq(mr);
             Label1.Text = "Successful";
 
