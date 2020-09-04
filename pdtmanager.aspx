@@ -48,8 +48,25 @@
                     <br />
                 </td>
                 <td class="auto-style3">
-                    <asp:GridView ID="GridView2" runat="server">
+                    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="req_id" DataSourceID="SqlDataSource1" OnRowCommand="GridView2_RowCommand" OnRowCreated="GridView2_RowCreated" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+                        <AlternatingRowStyle BackColor="#CCCCCC" />
+                        <Columns>
+                            <asp:BoundField DataField="project_name" HeaderText="project_name" SortExpression="project_name" />
+                            <asp:BoundField DataField="req_id" HeaderText="req_id" InsertVisible="False" ReadOnly="True" SortExpression="req_id" />
+                            <asp:BoundField DataField="reqstatus" HeaderText="reqstatus" SortExpression="reqstatus" />
+                            <asp:BoundField DataField="date_request" HeaderText="date_request" SortExpression="date_request" />
+                            <asp:ButtonField ButtonType="Button" CommandName="ViewDetails" Text="ViewDetails"/>
+                        </Columns>
+                        <FooterStyle BackColor="#CCCCCC" />
+                        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                        <SortedAscendingHeaderStyle BackColor="#808080" />
+                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                        <SortedDescendingHeaderStyle BackColor="#383838" />
                     </asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:greenhrConnectionString3 %>" SelectCommand="SELECT [project_name], [req_id], [reqstatus], [date_request] FROM [request_table] ORDER BY [req_id] DESC"></asp:SqlDataSource>
                 </td>
             </tr>
             <tr>

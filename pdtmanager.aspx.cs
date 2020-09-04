@@ -25,10 +25,10 @@ namespace WebApplication1
 
             mgr = new managerreq();
             mgr.mgrname = Label1.Text;
-            List<managerreq> ls = b.record(mgr.mgrname);
+            //List<managerreq> ls = b.record(mgr.mgrname);
             
-            GridView2.DataSource = ls;
-            GridView2.DataBind();
+            //GridView2.DataSource = ls;
+            //GridView2.DataBind();
 
            
 
@@ -64,6 +64,37 @@ namespace WebApplication1
         protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GridView2_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+
+        }
+        
+        protected void GridView2_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "ViewDetails")
+            {
+                int ind = Convert.ToInt32(e.CommandArgument);
+                GridViewRow grd = GridView2.Rows[ind];
+                string y = grd.Cells[1].Text.ToString();
+                int reqid = Convert.ToInt32(y);
+                con.Open();
+                SqlDataAdapter ad = new SqlDataAdapter("select * from request_table where req_id =" + reqid + "", con);
+                DataSet ds = new DataSet();
+                ad.Fill(ds);
+                con.Close();
+
+                Session["req"] = ds;
+
+                Response.Redirect("pdtmanagerview1.aspx");
+
+            }
         }
     }
 }
