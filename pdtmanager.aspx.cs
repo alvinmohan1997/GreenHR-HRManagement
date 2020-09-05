@@ -91,9 +91,16 @@ namespace WebApplication1
                 con.Close();
 
                 Session["req"] = ds;
-
-                Response.Redirect("pdtmanagerview1.aspx");
-
+                if (grd.Cells[2].Text.ToString() == "closed")
+                {
+                    Response.Redirect("pdtmanagerview1.aspx");
+                }
+                else
+                {
+                    Label2.Text = "Request not yet satisfied!!!!!!!";
+                }
+               
+                
             }
         }
     }

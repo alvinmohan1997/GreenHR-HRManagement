@@ -27,5 +27,6 @@ namespace WebApplication1
     
         public virtual DbSet<application_table> application_table { get; set; }
         public virtual DbSet<request_table> request_table { get; set; }
+        public virtual DbSet<hiredcandidate_table> hiredcandidate_table { get; set; }
     }
 }

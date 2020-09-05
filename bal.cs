@@ -82,5 +82,22 @@ namespace WebApplication1
 
             d.storecandidate(cn);
         }
+        
+        public bool viewcandidate(candidate cn)
+        {
+            bool x = false;
+            DataTable dt = d.candidatedetails(cn);
+            
+            for(int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (Convert.ToInt32(dt.Rows[i].ItemArray[21].ToString()) == cn.requestid && cn.reqstatus=="closed")
+                {
+                    x = true;
+                }
+
+            }
+            return x;
+        }
+
     }
 }

@@ -21,6 +21,15 @@ namespace WebApplication1
         public string resp { get; set; }
         public Nullable<int> req_id { get; set; }
         public string appstatus { get; set; }
+        public string manager_name { get; set; }
+        public string project_name { get; set; }
+        public Nullable<int> period_month { get; set; }
+        public Nullable<int> noof_vacancies { get; set; }
+        public string skill { get; set; }
+        public string pgm_languages { get; set; }
+        public Nullable<int> exp_years { get; set; }
+        public string desg { get; set; }
+        public Nullable<System.DateTime> dateapp { get; set; }
     
         public virtual request_table request_table { get; set; }
     }

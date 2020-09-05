@@ -108,5 +108,17 @@ namespace WebApplication1
             con.Close();
 
         }
+        public DataTable candidatedetails(candidate cn)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from hiredcandidate_table" , con);
+            //cmd.Parameters.AddWithValue("@reqid", cn.requestid);
+            
+            SqlDataReader rdr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(rdr);
+            con.Close();
+            return dt;
+        }
     }
 }

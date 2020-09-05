@@ -68,8 +68,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">request description</td>
-                    <td>
+                    <td class="auto-style3">request description</td>
+                    <td class="auto-style4">
                         <asp:Label ID="Label8" runat="server" Text="Label"></asp:Label>
                     </td>
                 </tr>
@@ -92,13 +92,31 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">date of request</td>
-                    <td>
+                    <td class="auto-style3">date of request</td>
+                    <td class="auto-style4">
                         <asp:Label ID="Label12" runat="server" Text="Label"></asp:Label>
                     </td>
                 </tr>
+                <tr>
+                    <td class="auto-style2">
+                        &nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
             </table>
         </div>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="cand_id" DataSourceID="SqlDataSource2" OnRowCommand="GridView1_RowCommand" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+            <Columns>
+                <asp:BoundField DataField="cand_id" HeaderText="cand_id" ReadOnly="True" SortExpression="cand_id" />
+                <asp:BoundField DataField="cand_name" HeaderText="cand_name" SortExpression="cand_name" />
+                <asp:BoundField DataField="skills" HeaderText="skills" SortExpression="skills" />
+                <asp:BoundField DataField="pgm_language" HeaderText="pgm_language" SortExpression="pgm_language" />
+                <asp:BoundField DataField="req_id" HeaderText="req_id" SortExpression="req_id" />
+                <asp:BoundField DataField="hired_date" HeaderText="hired_date" SortExpression="hired_date" />
+                <asp:ButtonField ButtonType="Button" CommandName="CandidateView" Text="CandidateDetails" />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:greenhrConnectionString4 %>" SelectCommand="SELECT [cand_id], [cand_name], [skills], [pgm_language], [req_id], [hired_date] FROM [hiredcandidate_table] ORDER BY [hired_date] DESC"></asp:SqlDataSource>
     </form>
 </body>
 </html>

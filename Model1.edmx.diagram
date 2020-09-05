@@ -8,6 +8,8 @@
         <EntityTypeShape EntityType="greenhrModel.application_table" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="greenhrModel.request_table" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="greenhrModel.reqforeignkey" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="greenhrModel.hiredcandidate_table" Width="1.5" PointX="3" PointY="7.875" />
+        <AssociationConnector Association="greenhrModel.requestforeignkey" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

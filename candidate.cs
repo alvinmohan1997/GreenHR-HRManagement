@@ -28,5 +28,6 @@ namespace WebApplication1
         public string email { get; set; }
         public DateTime interviewdate { get; set; }
         public int applid { get; set; }
+        public string reqstatus { get; set; }
     }
 }

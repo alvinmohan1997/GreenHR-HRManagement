@@ -18,6 +18,7 @@ namespace WebApplication1
         public request_table()
         {
             this.application_table = new HashSet<application_table>();
+            this.hiredcandidate_table = new HashSet<hiredcandidate_table>();
         }
     
         public string manager_name { get; set; }
@@ -35,5 +36,7 @@ namespace WebApplication1
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<application_table> application_table { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<hiredcandidate_table> hiredcandidate_table { get; set; }
     }
 }

@@ -67,6 +67,8 @@
                         <SortedDescendingHeaderStyle BackColor="#383838" />
                     </asp:GridView>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:greenhrConnectionString3 %>" SelectCommand="SELECT [project_name], [req_id], [reqstatus], [date_request] FROM [request_table] ORDER BY [req_id] DESC"></asp:SqlDataSource>
+                    <br />
+                    <asp:Label ID="Label2" runat="server" Text="......"></asp:Label>
                 </td>
             </tr>
             <tr>
