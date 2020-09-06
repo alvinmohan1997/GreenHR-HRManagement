@@ -105,18 +105,18 @@
                 </tr>
             </table>
         </div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="cand_id" DataSourceID="SqlDataSource2" OnRowCommand="GridView1_RowCommand" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="candidate_id" DataSourceID="SqlDataSource2" OnRowCommand="GridView1_RowCommand" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <Columns>
-                <asp:BoundField DataField="cand_id" HeaderText="cand_id" ReadOnly="True" SortExpression="cand_id" />
-                <asp:BoundField DataField="cand_name" HeaderText="cand_name" SortExpression="cand_name" />
+                <asp:BoundField DataField="candidate_id" HeaderText="candidate_id" ReadOnly="True" SortExpression="candidate_id" />
+                <asp:BoundField DataField="candidate_name" HeaderText="candidate_name" SortExpression="candidate_name" />
                 <asp:BoundField DataField="skills" HeaderText="skills" SortExpression="skills" />
-                <asp:BoundField DataField="pgm_language" HeaderText="pgm_language" SortExpression="pgm_language" />
-                <asp:BoundField DataField="req_id" HeaderText="req_id" SortExpression="req_id" />
+                <asp:BoundField DataField="program_language" HeaderText="program_language" SortExpression="program_language" />
+                <asp:BoundField DataField="request_id" HeaderText="request_id" SortExpression="request_id" />
                 <asp:BoundField DataField="hired_date" HeaderText="hired_date" SortExpression="hired_date" />
-                <asp:ButtonField ButtonType="Button" CommandName="CandidateView" Text="CandidateDetails" />
+                <asp:ButtonField ButtonType="Button" CommandName="CandidateView" Text="Candidate View" />
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:greenhrConnectionString4 %>" SelectCommand="SELECT [cand_id], [cand_name], [skills], [pgm_language], [req_id], [hired_date] FROM [hiredcandidate_table] ORDER BY [hired_date] DESC"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:greenhrConnectionString4 %>" SelectCommand="SELECT [candidate_id], [candidate_name], [skills], [program_language], [request_id], [hired_date] FROM [hiredcandidate_table] ORDER BY [hired_date] DESC"></asp:SqlDataSource>
     </form>
 </body>
 </html>

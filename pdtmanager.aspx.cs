@@ -85,7 +85,7 @@ namespace WebApplication1
                 string y = grd.Cells[1].Text.ToString();
                 int reqid = Convert.ToInt32(y);
                 con.Open();
-                SqlDataAdapter ad = new SqlDataAdapter("select * from request_table where req_id =" + reqid + "", con);
+                SqlDataAdapter ad = new SqlDataAdapter("select * from request_table where request_id =" + reqid + "", con);
                 DataSet ds = new DataSet();
                 ad.Fill(ds);
                 con.Close();

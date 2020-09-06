@@ -18,7 +18,6 @@ namespace WebApplication1
         public request_table()
         {
             this.application_table = new HashSet<application_table>();
-            this.hiredcandidate_table = new HashSet<hiredcandidate_table>();
         }
     
         public string manager_name { get; set; }
@@ -26,17 +25,15 @@ namespace WebApplication1
         public Nullable<int> period_month { get; set; }
         public Nullable<int> noof_vacancies { get; set; }
         public string skill { get; set; }
-        public string pgm_languages { get; set; }
-        public Nullable<int> exp_years { get; set; }
-        public string req_desc { get; set; }
-        public int req_id { get; set; }
-        public string reqstatus { get; set; }
-        public string desg { get; set; }
+        public string program_language { get; set; }
+        public Nullable<int> experience_years { get; set; }
+        public string request_description { get; set; }
+        public int request_id { get; set; }
+        public string request_status { get; set; }
+        public string designation { get; set; }
         public Nullable<System.DateTime> date_request { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<application_table> application_table { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<hiredcandidate_table> hiredcandidate_table { get; set; }
     }
 }

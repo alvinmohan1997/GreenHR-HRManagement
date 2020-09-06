@@ -21,21 +21,21 @@
                 
                 <ItemTemplate>
                     <tr>
-                        <td><%#Eval("dateapp") %></td>
-                        <td><%# Eval("desg") %></td>
+                        <td><%#Eval("date_application") %></td>
+                        <td><%# Eval("designation") %></td>
                         
                         <td>
-                            <asp:Button ID="Button1" runat="server" Text="Apply now" CommandArgument='<%#Eval("appl_id") %>' OnClick="mybtnhandler"/>
+                            <asp:Button ID="Button1" runat="server" Text="Apply now" CommandArgument='<%#Eval("application_id") %>' OnClick="mybtnhandler"/>
                         </td>
                     </tr> 
 
                 </ItemTemplate>
                    
             </asp:Repeater>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:greenhrConnectionString2 %>" SelectCommand="SELECT DISTINCT [appl_id], [desg], [dateapp] FROM [application_table] WHERE ([appstatus] = @appstatus) ORDER BY [dateapp] DESC">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:greenhrConnectionString2 %>" SelectCommand="SELECT [application_id], [designation], [date_application] FROM [application_table] WHERE ([application_status] = @application_status) ORDER BY [date_application] DESC">
               
                 <SelectParameters>
-                    <asp:Parameter DefaultValue="inprogress" Name="appstatus" Type="String" />
+                    <asp:Parameter DefaultValue="inprogress" Name="application_status" Type="String" />
                 </SelectParameters>
             </asp:SqlDataSource>
             

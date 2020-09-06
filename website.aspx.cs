@@ -11,7 +11,8 @@ namespace WebApplication1
     {
         bal b = new bal();
         managerreq mg;
-        greenhrEntities en = new greenhrEntities();
+
+        greenhrEntities1 en = new greenhrEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
 

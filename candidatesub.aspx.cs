@@ -12,7 +12,8 @@ namespace WebApplication1
         bal b=new bal();
         candidate cn;
         string name,reqid;
-        greenhrEntities hr = new greenhrEntities();
+        greenhrEntities1 hr = new greenhrEntities1();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             string username = Request.QueryString["applid"];
@@ -20,11 +21,11 @@ namespace WebApplication1
             Session["UserName"] = username;
             Label1.Text = Session["UserName"] as string;
 
-            var x = from x1 in hr.application_table  where x1.appl_id.ToString() == name select  x1 ;
+            var x = from x1 in hr.application_table  where x1.application_id.ToString() == name select  x1 ;
             
             foreach (var y in x)
             {
-                reqid = y.req_id.ToString();
+                reqid = y.request_id.ToString();
                 
             }
 

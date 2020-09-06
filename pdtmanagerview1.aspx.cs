@@ -83,7 +83,7 @@ namespace WebApplication1
                     int candid = Convert.ToInt32(y);
                     //int reqid = Convert.ToInt32(z);
                     con.Open();
-                    SqlDataAdapter ad = new SqlDataAdapter("select * from hiredcandidate_table where cand_id =" + candid + "", con);
+                    SqlDataAdapter ad = new SqlDataAdapter("select * from hiredcandidate_table where candidate_id =" + candid + "", con);
                     //SqlDataAdapter ad = new SqlDataAdapter("select * from  hiredcandidate_table a,request_table b join on a.req_id equals b.req_id and b.reqstatus="+ "closed" +" and a.cand_id =" + candid + "", con);
                     DataSet ds = new DataSet();
                     ad.Fill(ds);

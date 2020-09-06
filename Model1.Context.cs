@@ -13,10 +13,10 @@ namespace WebApplication1
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class greenhrEntities : DbContext
+    public partial class greenhrEntities1 : DbContext
     {
-        public greenhrEntities()
-            : base("name=greenhrEntities")
+        public greenhrEntities1()
+            : base("name=greenhrEntities1")
         {
         }
     
@@ -27,6 +27,5 @@ namespace WebApplication1
     
         public virtual DbSet<application_table> application_table { get; set; }
         public virtual DbSet<request_table> request_table { get; set; }
-        public virtual DbSet<hiredcandidate_table> hiredcandidate_table { get; set; }
     }
 }

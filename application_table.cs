@@ -14,22 +14,22 @@ namespace WebApplication1
     
     public partial class application_table
     {
-        public int appl_id { get; set; }
-        public string job_desc { get; set; }
-        public string min_qualification { get; set; }
-        public string pref_qualification { get; set; }
-        public string resp { get; set; }
-        public Nullable<int> req_id { get; set; }
-        public string appstatus { get; set; }
+        public int application_id { get; set; }
+        public string job_description { get; set; }
+        public string minimum_qualification { get; set; }
+        public string preferred_qualification { get; set; }
+        public string responsibility { get; set; }
+        public Nullable<int> request_id { get; set; }
+        public string application_status { get; set; }
         public string manager_name { get; set; }
         public string project_name { get; set; }
         public Nullable<int> period_month { get; set; }
         public Nullable<int> noof_vacancies { get; set; }
         public string skill { get; set; }
-        public string pgm_languages { get; set; }
-        public Nullable<int> exp_years { get; set; }
-        public string desg { get; set; }
-        public Nullable<System.DateTime> dateapp { get; set; }
+        public string program_language { get; set; }
+        public Nullable<int> experience_years { get; set; }
+        public string designation { get; set; }
+        public Nullable<System.DateTime> date_application { get; set; }
     
         public virtual request_table request_table { get; set; }
     }
