@@ -142,6 +142,15 @@
                 <tr>
                     <td colspan="2">
                         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" />
+                        <br />
+                        <asp:Label ID="Label3" runat="server"></asp:Label>
+                        <br />
+                        Your Candidate id is<asp:Label ID="Label4" runat="server" Text="-----"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Upload Resume</asp:LinkButton>
                     </td>
                 </tr>
                 <tr>

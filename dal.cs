@@ -120,5 +120,15 @@ namespace WebApplication1
             con.Close();
             return dt;
         }
+        public DataTable retrivecandiadteid()
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from candidate_table", con);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(rdr);
+            con.Close();
+            return dt;
+        }
     }
 }

@@ -90,6 +90,7 @@
     <Content Include="pdtmanagerreq.aspx" />
     <Content Include="pdtmanagerview1.aspx" />
     <Content Include="pdtmanagerview2.aspx" />
+    <Content Include="resume.aspx" />
     <Content Include="Web.config" />
     <Content Include="pdtmanager.aspx" />
     <Content Include="login.aspx" />
@@ -164,6 +165,13 @@
     </Compile>
     <Compile Include="request_table.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="resume.aspx.cs">
+      <DependentUpon>resume.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="resume.aspx.designer.cs">
+      <DependentUpon>resume.aspx</DependentUpon>
     </Compile>
     <Compile Include="userentity.cs" />
     <Compile Include="login.aspx.cs">

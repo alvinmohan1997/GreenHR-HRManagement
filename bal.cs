@@ -98,6 +98,20 @@ namespace WebApplication1
             }
             return x;
         }
+        public candidate getcandidate(candidate a)
+        {
+            DataTable dt = d.retrivecandiadteid();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                
+                if (Convert.ToInt32(dt.Rows[i].ItemArray[19].ToString()) == a.applid && dt.Rows[i].ItemArray[1].ToString()==a.candidatename)
+                {
+                    a.candidateid = Convert.ToInt32(dt.Rows[i].ItemArray[0].ToString());
+                    
+                }
+            }
+            return a;
+        }
 
     }
 }

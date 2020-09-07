@@ -36,6 +36,11 @@ namespace WebApplication1
             Response.Redirect("website.aspx");
         }
 
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("resume.aspx?applid="+Label1.Text+"&candid="+Label4.Text);
+        }
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             cn = new candidate();
@@ -60,6 +65,7 @@ namespace WebApplication1
             cn.applid = Convert.ToInt32(name);
             b.storecandidate(cn);
             Label2.Text = "Registeration Successful";
+            Label3.Text = "please upload your resume";
             TextBox1.Text = "";
             TextBox2.Text = "";
             TextBox3.Text = "";
@@ -75,6 +81,10 @@ namespace WebApplication1
             TextBox13.Text = "";
             TextBox14.Text = "";
             TextBox15.Text = "";
+
+            candidate c = b.getcandidate(cn);
+            Label4.Text = c.candidateid.ToString();
+
         }
     }
 }
