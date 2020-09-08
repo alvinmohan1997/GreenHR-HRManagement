@@ -54,5 +54,11 @@ namespace WebApplication1
         {
             Response.Redirect("pdtmanager.aspx");
         }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
+
     }
 }

@@ -165,13 +165,32 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">home</asp:LinkButton>
                         <br />
                     </td>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style2"></td>
                 </tr>
             </table>
         </div>
+        <p>
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="resume_id" DataSourceID="SqlDataSource4" OnRowCommand="GridView1_RowCommand">
+                <Columns>
+                    <asp:BoundField DataField="resume_id" HeaderText="resume_id" InsertVisible="False" ReadOnly="True" SortExpression="resume_id" />
+                    <asp:BoundField DataField="candidate_id" HeaderText="candidate_id" SortExpression="candidate_id" />
+                    <asp:BoundField DataField="pdf_resume" HeaderText="pdf_resume" SortExpression="pdf_resume" />
+                    <asp:HyperLinkField DataNavigateUrlFields="pdf_resume" HeaderText="Resume(pdf)" Text="View and Download" />
+                </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:greenhrConnectionString5 %>" SelectCommand="SELECT DISTINCT [resume_id], [candidate_id], [pdf_resume] FROM [resume_table] WHERE ([candidate_id] = @candidate_id)">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="Label1" Name="candidate_id" PropertyName="Text" Type="Int32" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+        </p>
+        <p>
+            &nbsp;</p>
+        <p>
+                        <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">home</asp:LinkButton>
+                        </p>
     </form>
 </body>
 </html>

@@ -199,6 +199,8 @@
     </Content>
     <None Include="packages.config" />
     <Content Include="UploadedResume\10001.pdf" />
+    <Content Include="UploadedResume\100.pdf" />
+    <Content Include="UploadedResume\101.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

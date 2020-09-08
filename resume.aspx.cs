@@ -117,8 +117,6 @@ namespace WebApplication1
                 scon1.Close();
 
 
-
-
             }
 
         }
