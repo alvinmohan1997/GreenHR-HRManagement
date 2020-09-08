@@ -47,6 +47,7 @@
                     <td>Resume</td>
                     <td>
                         <asp:FileUpload ID="FileUpload1" runat="server" />
+                        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
                     </td>
                 </tr>
                 <tr>
