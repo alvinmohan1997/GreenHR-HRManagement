@@ -25,11 +25,7 @@ namespace WebApplication1
 
             mgr = new managerreq();
             mgr.mgrname = Label1.Text;
-            //List<managerreq> ls = b.record(mgr.mgrname);
             
-            //GridView2.DataSource = ls;
-            //GridView2.DataBind();
-
            
 
 
@@ -91,7 +87,7 @@ namespace WebApplication1
                 con.Close();
 
                 Session["req"] = ds;
-                if (grd.Cells[2].Text.ToString() == "closed")
+                if (grd.Cells[4].Text.ToString() == "closed")
                 {
                     Response.Redirect("pdtmanagerview1.aspx");
                 }

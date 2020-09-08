@@ -51,11 +51,12 @@
                     <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="request_id" DataSourceID="SqlDataSource1" OnRowCommand="GridView2_RowCommand" OnRowCreated="GridView2_RowCreated" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
                         <AlternatingRowStyle BackColor="#CCCCCC" />
                         <Columns>
-                            <asp:BoundField DataField="project_name" HeaderText="project_name" SortExpression="project_name" />
+                            <asp:BoundField DataField="designation" HeaderText="designation" SortExpression="designation" />
                             <asp:BoundField DataField="request_id" HeaderText="request_id" InsertVisible="False" ReadOnly="True" SortExpression="request_id" />
-                            <asp:BoundField DataField="request_status" HeaderText="request_status" SortExpression="request_status" />
+                            <asp:BoundField DataField="project_name" HeaderText="project_name" SortExpression="project_name" />
                             <asp:BoundField DataField="date_request" HeaderText="date_request" SortExpression="date_request" />
-                            <asp:ButtonField ButtonType="Button" CommandName="ViewDetails" Text="ViewDetails" />
+                            <asp:BoundField DataField="request_status" HeaderText="request_status" SortExpression="request_status" />
+                            <asp:ButtonField ButtonType="Button" CommandName="ViewDetails" HeaderText="view details" Text="View Details" />
                         </Columns>
                         <FooterStyle BackColor="#CCCCCC" />
                         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -66,7 +67,7 @@
                         <SortedDescendingCellStyle BackColor="#CAC9C9" />
                         <SortedDescendingHeaderStyle BackColor="#383838" />
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:greenhrConnectionString3 %>" SelectCommand="SELECT [project_name], [request_id], [request_status], [date_request] FROM [request_table] WHERE ([manager_name] = @manager_name) ORDER BY [request_id] DESC">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:greenhrConnectionString3 %>" SelectCommand="SELECT [designation], [request_id], [project_name], [date_request], [request_status] FROM [request_table] WHERE ([manager_name] = @manager_name) ORDER BY [request_id] DESC">
                         <SelectParameters>
                             <asp:SessionParameter Name="manager_name" SessionField="username" Type="String" />
                         </SelectParameters>
