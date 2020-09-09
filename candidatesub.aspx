@@ -37,6 +37,9 @@
             text-align: left;
             height: 29px;
         }
+        .auto-style9 {
+            height: 77px;
+        }
     </style>
 </head>
 <body>
@@ -140,28 +143,29 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">
-                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" />
+                    <td colspan="2" class="auto-style9">
+                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Uploade Resume" />
+                        <br />
+                        <br />
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">gotohome</asp:LinkButton>
                         <br />
                         <asp:Label ID="Label3" runat="server"></asp:Label>
                         <br />
-                        Your Candidate id is<asp:Label ID="Label4" runat="server" Text="-----"></asp:Label>
+                        <asp:Label ID="Label4" runat="server"></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Upload Resume</asp:LinkButton>
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <asp:Label ID="Label2" runat="server"></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">gotohome</asp:LinkButton>
-                    </td>
+                        &nbsp;</td>
                 </tr>
             </table>
         </div>

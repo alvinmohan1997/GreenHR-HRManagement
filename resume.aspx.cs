@@ -14,7 +14,7 @@ namespace WebApplication1
         static string resumelink;
         static Int32 resume_id;
 
-        string username, username1;
+        string username, username1,username2;
         protected void Page_Load(object sender, EventArgs e)
         {
             string applid = Request.QueryString["applid"];
@@ -27,6 +27,11 @@ namespace WebApplication1
             Session["UserName1"] = username1;
             Label2.Text = Session["UserName1"] as string;
 
+            string candname = Request.QueryString["candname"];
+            username2 = candname;
+            Session["UserName2"] = username2;
+            Label4.Text = Session["UserName2"] as string;
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -35,7 +40,7 @@ namespace WebApplication1
             {
 
 
-                String query = "insert into resume_table(application_id,Candidate_id,candidate_name,pdf_resume) values(" + Label1.Text + ",'" + Label2.Text + "','" + TextBox2.Text + "','" + resumelink + "')";
+                String query = "insert into resume_table(application_id,Candidate_id,candidate_name,pdf_resume) values(" + Label1.Text + ",'" + Label2.Text + "','" + Label4.Text + "','" + resumelink + "')";
                 String mycon = "Data Source=DESKTOP-B0P46V9\\SQLEXPRESS;Initial Catalog=greenhr;Integrated Security=True";
                 SqlConnection con = new SqlConnection(mycon);
                 con.Open();
@@ -44,9 +49,10 @@ namespace WebApplication1
                 cmd.Connection = con;
                 cmd.ExecuteNonQuery();
 
-                TextBox2.Text = "";
+                Label4.Text = "";
                 Label1.Text = "";
                 Label2.Text = "";
+                Label5.Text = "Submitted Successfully";
             }
 
 
@@ -70,6 +76,7 @@ namespace WebApplication1
 
                     resumelink = "UploadedResume/" + resume_id + ".pdf";
                     resumesaved = true;
+                    Label3.Text = "";
                 }
 
 

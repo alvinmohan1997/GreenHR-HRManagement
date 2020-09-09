@@ -40,19 +40,20 @@
                 <tr>
                     <td>&nbsp;Full Name</td>
                     <td>
-                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                        <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td>Resume</td>
                     <td>
                         <asp:FileUpload ID="FileUpload1" runat="server" />
-                        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="Label3" runat="server"></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">
-                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" />
+                        <asp:Label ID="Label5" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style3">&nbsp;</td>
                 </tr>

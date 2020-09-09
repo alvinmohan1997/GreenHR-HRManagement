@@ -38,12 +38,13 @@ namespace WebApplication1
 
         protected void LinkButton2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("resume.aspx?applid="+Label1.Text+"&candid="+Label4.Text);
+          // Response.Redirect("resume.aspx?applid=" + Label1.Text + "&candid=" + Label4.Text);
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             cn = new candidate();
+            
             cn.candidatename = TextBox1.Text;
             cn.candidateskills = TextBox2.Text;
             cn.pgmlanguage = TextBox3.Text;
@@ -64,8 +65,13 @@ namespace WebApplication1
             cn.interviewdate = DateTime.Today.AddDays(30);
             cn.applid = Convert.ToInt32(name);
             b.storecandidate(cn);
-            Label2.Text = "Registeration Successful";
-            Label3.Text = "please upload your resume";
+           // Label2.Text = "Registeration Successful";
+           // Label3.Text = "please upload your resume";
+           
+
+            candidate c = b.getcandidate(cn);
+            Label4.Text = c.candidateid.ToString();
+            Response.Redirect("resume.aspx?applid=" + Label1.Text + "&candid=" + Label4.Text +"&candname="+TextBox1.Text);
             TextBox1.Text = "";
             TextBox2.Text = "";
             TextBox3.Text = "";
@@ -81,9 +87,6 @@ namespace WebApplication1
             TextBox13.Text = "";
             TextBox14.Text = "";
             TextBox15.Text = "";
-
-            candidate c = b.getcandidate(cn);
-            Label4.Text = c.candidateid.ToString();
 
         }
     }

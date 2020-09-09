@@ -86,7 +86,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style5">
-                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Apply" />
                     </td>
                     <td class="auto-style3">
                         &nbsp;</td>
