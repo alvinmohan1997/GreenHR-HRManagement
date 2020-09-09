@@ -82,7 +82,7 @@ namespace WebApplication1
 
                 else
                 {
-                    Label3.Text = "Upload Resume in PDF Format Only";
+                    Label3.Text = "Upload Resume in PDF Format Only!!";
                 }
 
             }
